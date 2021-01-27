@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Movie List Admin</title>
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name" />
+        <style>
+            html, body {
+                overflow-x: hidden;
+              }
+            nav{
+                background-color: rgb(25, 0, 255);
+            }
+            #find-food{
+                font-weight: normal;
+                margin-left: 2.5%;
+                padding: 0;
+            }
+            #search {
+                width: 100%;
+                height: 45vh;
+                background-image: url("https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80");
+                background-repeat: repeat-x;
+                object-fit: cover;
+            }
+            .search-wrapper {
+                margin: 0 auto;
+                float: none;  
+                top: 0;
+                width: 95%;
+                display: flex;
+                align-items: center;  
+            }
+            .search-wrapper input {
+                width: 100%;
+            }
+            .material-icons{
+                vertical-align: middle;
+            }
+            .icon-size{
+                font-size: 1.5rem;
+            }
+            .edit{
+                color: white;
+                font-size: 20px;
+            }
+            .edit-button{
+                background-color: rgb(25, 0, 255);
+            }
+            .star{
+                color: darkblue;
+                font-size: 20px;
+            }
+            .card{
+                max-height: 500px;
+            }
+            footer{
+                bottom:0;
+                margin-top: 2%; 
+                background-color: rgb(25, 0, 255);
+                height: 3rem;
+            }
+            #footer-text{
+                padding-top: 0.7rem;
+            }
+            .wrapper {
+                position: relative;
+                display: inline-block;
+            }
+            .schedule{
+                color: gray;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark" >
+            <a class="navbar-brand text-white" href="#">
+              <i class="material-icons icon-size">movie</i>
+              Movie Cruiser
+            </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-list ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Movies</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        
+        <div class="wrapper mb-4 d-flex align-items-center" id="search">
+            <div class="container-fluid">
+                <h1 id="find-food" class="text-white col-12">Find Movies</h1>
+                <div class="search-wrapper input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="material-icons icon-size text-dark">movie_filter</i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Search Movie" aria-label="search" aria-describedby="basic-addon1">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid  wrapper flex-grow-1">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://miro.medium.com/max/160/1*I9zDkUL5PfD7aT0O2Zk8mg.jpeg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5 class="d-inline-block ">Incidious 
+                                    <span class="float-right"><a href="https://www.youtube.com/watch?v=zuZnRUcoWos&feature=youtu.be" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                        Drama
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">9.3/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">10/9/1994</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://i.pinimg.com/236x/fd/93/50/fd9350b320c52d56e0280f7a2a86611b.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>Zombieland
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi1348706585?playlistId=tt0068646&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-danger">Inactive</span>
+                                    <small>
+                                         Adventure, Drama
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">9.2/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">14/03/2006</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX182_CR0,0,182,268_AL__QL50.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>The Dark Knight
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi324468761?playlistId=tt0468569&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                         Action, Crime, Drama
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">9.0/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">14/07/2008</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_UY268_CR3,0,182,268_AL__QL50.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>The Godfather:
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi696162841?playlistId=tt0071562&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    <div>Part II</div></h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-danger">Inactive</span>
+                                    <small>
+                                         Crime, Drama
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">9.0/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">12/12/1974</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMWU4N2FjNzYtNTVkNC00NzQ0LTg0MjAtYTJlMjFhNGUxZDFmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_UX182_CR0,0,182,268_AL__QL50.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>12 Angry Men
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi3452609817?playlistId=tt0050083&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                        Crime, Drama
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">9.0/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">10/4/1957</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://cdn.cinematerial.com/p/136x/5ozjvvzp/jojo-rabbit-argentinian-movie-poster-sm.jpg?v=1577744656" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5 class="d-inline-block ">JOJO Rabbit
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi2073101337?playlistId=tt0167260&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                        Adventure, Drama
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">8.9/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">01/12/2019</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://malayalamsubtitle.com/wp-content/uploads/2019/12/MV5BMTI0NjUyMTk3Nl5BMl5BanBnXkFtZTcwOTA5MzkzMQ@@._V1_UX182_CR00182268_AL_.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>The Perfume 
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi2620371481?playlistId=tt0110912&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                        Crime, Thriller
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">8.9/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">21/05/2006</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://i.pinimg.com/236x/dd/cd/64/ddcd645217c5c8572691c8ebdee278ec.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>The Gentleman
+                                    <span class="float-right"><a href="https://www.imdb.com/video/imdb/vi1158527769?playlistId=tt0108052&ref_=tt_ov_vi" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                        Crime
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">8.9/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">30/01/2020</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mt-2" >
+                    <div class="card-deck">
+                        <div class="card">
+                            <img src="https://i.pinimg.com/236x/c8/51/20/c85120f34d1b5feb8be73f585f3a3210.jpg">
+                            <div class="card-body">
+                                <div  class="card-title mb-1">
+                                    <h5>Promised Neverland
+                                    <span class="float-right"><a href="https://www.youtube.com/watch?v=esTm0x10HW4" target="_blank" rel="nofollow noreferrer">Teaser</a></span>
+                                    </h5>
+                                </div>
+                                <div class="mb-1">
+                                    <span class="badge badge-success">Active</span>
+                                    <small>
+                                        Thriller
+                                        
+                                    </small>
+                                    <span class="float-right">
+                                            <i class="material-icons star">star</i>
+                                            <span class="badge bg-info text-light">8.8/10</span>
+                                        </span>
+                                </div>
+                                <div>
+                                    <small>
+                                        <span class="schedule"><i class="material-icons">schedule</i>Launch</span>
+                                        <a href="edit-menu-item.html" class="btn edit-button text-white float-right"><i class="material-icons edit">edit</i> Edit</a>
+                                    </small>
+                                </div>
+                                <small class="schedule">10/9/1016</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        <footer class="text-white text-lg-start container-fluid">
+            <span class="d-inline-block" id="footer-text">@Copyright 2021</span>
+        </footer>
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" ></script>
+    </body>
+</html> 
